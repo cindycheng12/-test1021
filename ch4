@@ -1,0 +1,15 @@
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+
+import skimage.io as io
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import figure
+c=io.imread('chickens.png')
+io.imshow(c)
+import skimage.exposure as ex
+ch=ex.equalize_hist(c)
+io.imshow(ch)
+f=figure();f.show(plt.hist(ch.flatten(),bins=256))
