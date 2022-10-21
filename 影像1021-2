@@ -1,0 +1,10 @@
+import skimage.io as io
+from matplotlib.pyplot import figure
+import scipy.ndimage as ndi
+c=io.imread('cameraman.png')
+cfb=ndi.uniform_filter(c,[9,9],mode='constant')
+figure(),io.imshow(cfb)
+
+
+cfc2=ndi.uniform_filter(c,25)
+figure(),io.imshow(cfc2)
